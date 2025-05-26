@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Halaman Tidak Ditemukan</title>
+</head>
+<body>
+	<h1>Oops! Halaman yang Anda cari tidak ditemukan</h1>
+	<p>Kami mohon maaf, halaman yang Anda cari tidak ditemukan.</p>
+	<p>Berikut adalah informasi tambahan:</p>
+	<ul>
+		<li>Referer: <!--#echo var="HTTP_REFERER" --></li>
+		<li>IP: <!--#echo var="REMOTE_ADDR" --></li>
+		<li>URI: <!--#echo var="REQUEST_URI" --></li>
+		<li>Host: <!--#echo var="HTTP_HOST" --></li>
+		<li>User Agent: <!--#echo var="HTTP_USER_AGENT" --></li>
+		<li>Status: <!--#echo var="REDIRECT_STATUS" --></li>
+	</ul>
+</body>
+</html>
