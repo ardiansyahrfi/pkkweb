@@ -340,16 +340,17 @@ background-position:center center!important;
 border-radius:20px!important
 background:url('{{ $kategori->event }}');
 }
-.games-thumbnail .card-body{
-min-height:200px;
-border-radius:20px
-}
-.games-thumbnail .card-body h3{
-
-margin-top:52px;
-text-transform:uppercase
+.games-thumbnail {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    border-radius: 20px !important;
 }
 
+.games-thumbnail .card-body {
+    min-height: 200px;
+    border-radius: 20px;
+}
 .games-logo{
 margin-bottom:20px
 }
