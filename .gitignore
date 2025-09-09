@@ -1,1 +1,31 @@
-.qodo
+﻿/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+/.phpunit.cache
+
+# Ignore all storage files
+/storage/*
+!/storage/app
+!/storage/app/public
+!/storage/framework
+!/storage/framework/cache
+!/storage/framework/sessions
+!/storage/framework/views
+!/storage/logs
+
+# Ignore Laravel log file
+/storage/logs/*.log
+
+# Ignore composer lock if needed
+composer.lock
