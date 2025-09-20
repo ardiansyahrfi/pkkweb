@@ -1094,7 +1094,7 @@ background: #212429;
                 <div class="col">
                     <div class="container mt-2 mb-2 text-center">
                         <small>
-                            Copyright © 2025 <a href="{{ route('home') }}" class="text-white">{{ ENV('APP_NAME') }}</a>
+                            Copyright © 20  25 <a href="{{ route('home') }}" class="text-white">{{ ENV('APP_NAME') }}</a>
                             All Rights Reserved - <a href="{{ route('Terms-and-conditions') }}" class="text-white"
                                 style="text-decoration: underline;">Terms and conditions</a>
                             - <a href="{{ route('privacy-policy') }}" class="text-white"
