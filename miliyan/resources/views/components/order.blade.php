@@ -395,7 +395,7 @@ color: #fff !important;
                 </div>
             </div>
         </div>
-        <div class="card miliyan-rounded-sedang border-0 games-thumbnail" style="background-image: url('/assets/bannerlayanan/banner 3.jpg');">
+        <div class="card miliyan-rounded-sedang border-0 games-thumbnail" style="background-image: url('/assets/bannerlayanan/bannertikacel.jpg');">
     <div class="card-body border-0 text-center"></div>
 </div>
         <div class="games-logo text-center pb-0 mb-2 d-lg-none d-md-none">
@@ -1584,27 +1584,20 @@ color: #fff !important;
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script async src="https://www.google.com/recaptcha/api.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-  <script>
+<script>
 function removeClass(){  
-    btnorder.className = btnorder.className.replace(new RegExp('(?:^|\\s)loading(?!\\S)'), '');
+    order.className = order.className.replace(new RegExp('(?:^|\\s)loading(?!\\S)'), '');
 }
 
-var btnorder = document.getElementById('btn-order');
+var order = document.getElementById('order');
 
 
-btnorder.addEventListener("click", function() {
-    btnorder.className = btnorder.className + ' loading';
+order.addEventListener("click", function() {
+    order.className = order.className + ' loading';
     setTimeout(removeClass, 4000);
 }, false);
 </script>
-
-  <script>
+<script>
    function openPaymentDrawer(elem) {
     var $this = $(elem);
     if ($('input[type="radio"][name="nominal"]:checked').val() == null) {
@@ -1673,151 +1666,34 @@ btnorder.addEventListener("click", function() {
         });
         $("#order").on("click", function() {
             var uid = $("#user_id").val();
-            var zone = $("#zone").val();
-            var service = $("input[name='nominal']:checked").val();
-            var pembayaran = $("input[name='pembayaran']:checked").val();
-            var nomor = $("input[name='nomor']").val();
+            var zone = $("#zone").val() || "-";
+            var service = $("input[name='nominal']:checked").parent().find('.hayutopup-prod').text();
+            var pembayaran = $("input[name='pembayaran']:checked").parent().find('.info-bottom').text().trim();
+            var nomor = $("#nomor").val();
             var voucher = $("#voucher").val();
-            $.ajax({
-                url: "<?php echo route('ajax.confirm-data') ?>",
-                dataType: "JSON",
-                type: "POST",
-                data: {
-                    '_token': '<?php echo csrf_token(); ?>',
-                    'uid': uid,
-                    'zone': zone,
-                    'service': service,
-                    'payment_method': pembayaran,
-                    'nomor': nomor,
-                    'grecaptcha': grecaptcha.getResponse(),
-                    'voucher': voucher
-                },
-                beforeSend: function() {
-                    Swal.fire({
-                        icon: "info",
-                        title: "Mohon Tunggu",
-                        background: '#fff',
-                        color: '#000',
-                        showConfirmButton: false,
-                        allowOutsideClick: false,
-                    });
-                },
-                complete:function(){
-                    grecaptcha.reset();
-                },
-                  success: function(res) {
-                    if (res.status == true) {
-                        Swal.fire({
-                            icon: 'success',
-                            titleText: 'Detail Pesanan',
-                            html: `${res.data}`,
-                            showCancelButton: true,
-                            cancelButtonText: 'Cancel',
-                            confirmButtonText: 'Beli Sekarang',
-                            backdrop: '',
-                            customClass: {
-                                title: 'swal-title',
-                                htmlContainer: 'swal-text'
-                            }
 
+            // Validasi sederhana
+            if (!uid || !service || !pembayaran || !nomor) {
+                alert("Pastikan semua data sudah diisi dan pilihan sudah dipilih!");
+                return;
+            }
 
-                        }).then(resp => {
-                            if (resp.isConfirmed) {
-                                var nickname = $("#nick").text();
-                                var nohp = $("input[name='nomor']").val();
-                                $.ajax({
-                                    url: "<?php echo route('order') ?>",
-                                    dataType: "JSON",
-                                    type: "POST",
-                                    data: {
-                                        '_token': '<?php echo csrf_token() ?>',
-                                        'nickname': nickname,
-                                        'uid': uid,
-                                        'zone': zone,
-                                        'service': service,
-                                        'payment_method': pembayaran,
-                                        'nomor': nohp,
-                                        'voucher': voucher
+            // Format pesan invoice
+            var pesan = `Halo Admin, saya ingin order:\n\n` +
+                `ID/Email/No HP: ${uid}\n` +
+                (zone !== "-" ? `Server/Profile: ${zone}\n` : '') +
+                `Nominal: ${service}\n` +
+                `Pembayaran: ${pembayaran}\n` +
+                `Nomor WhatsApp: ${nomor}\n` +
+                (voucher ? `Voucher: ${voucher}\n` : '') +
+                `\nMohon diproses, terima kasih.`;
 
-                                    },
-                                     beforeSend: function() {
-                                        let timerInterval
-                                        Swal.fire({
-                                          title: 'Tunggu Sebentar',
-                                          timerProgressBar: false,
-                                          allowOutsideClick: false,
-                                          didOpen: () => {
-                                            Swal.showLoading()
-                                            const b = Swal.getHtmlContainer().querySelector('b')
-                                            timerInterval = setInterval(() => {
-                                              b.textContent = Swal.getTimerLeft()
-                                            }, 100)
-                                          },
-                                          willClose: () => {
-                                            clearInterval(timerInterval)
-                                          }
-                                        }).then((result) => {
-                                          /* Read more about handling dismissals below */
-                                          if (result.dismiss === Swal.DismissReason.timer) {
-                                            console.log('I was closed by the timer')
-                                          }
-                                        })
-                                    },
-                                   success: function(resOrder) {
-                                        if (resOrder.status) {
-                                            Swal.fire({
-                                                title: 'Berhasil memesan',
-                                                text: `Order ID : ${resOrder.order_id}`,
-                                                icon: 'success',
-                                                showConfirmButton: false,
-                                                allowOutsideClick: false,
-                                                // background: '#222831',
-                                                // color: '#fff'
-                                            });
-                                            window.location = `/pembelian/invoice/${resOrder.order_id}`;
-                                        } else {
-                                            Swal.fire({
-                                                title: 'Gagal...',
-                                                text: `${resOrder.data}`,
-                                                icon: 'error',
-                                                // background: '#222831',
-                                                // color: '#fff'
-                                            });
-                                        }
-                                    }
-                                })
-                            }
-                        })
-                    } else if (res.status == false) {
-                        Swal.fire({
-                            title: 'Oops...',
-                            text: res.data,
-                            icon: 'error',
-                            background: '#fff',
-                            color: '#000'
-                        });
-                    } else {
-                        Swal.fire({
-                            title: 'Oops...',
-                            text: 'User ID tidak ditemukan.',
-                            icon: 'error',
-                            background: '#fff',
-                            color: '#000'
-                        });
-                    }
-                },
-                error: function(e) {
-                    if (e.status == 422) {
-                        Swal.fire({
-                            title: 'Oops...',
-                            text: 'Pastikan anda sudah mengisi semua data yang diperlukan.',
-                            icon: 'error',
-                            background: '#fff',
-                            color: '#000'
-                        });
-                    }
-                }
-            })
+            // Nomor WhatsApp tujuan (ganti dengan nomor admin)
+            var waAdmin = "6283811477122"; // GANTI dengan nomor admin WA
+
+            // Redirect ke WhatsApp
+            var waUrl = `https://wa.me/${waAdmin}?text=${encodeURIComponent(pesan)}`;
+            window.open(waUrl, "_blank");
         })
         
         $("#check").on("click", function(){

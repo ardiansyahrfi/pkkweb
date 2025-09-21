@@ -1,4 +1,4 @@
-@extends('main-admin')
+{{-- @extends('main-admin')
 
 @section('content')
 <!-- start page title -->
@@ -149,4 +149,4 @@
         });
     };
 </script>
-@endsection
+@endsection --}}

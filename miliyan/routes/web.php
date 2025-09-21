@@ -197,9 +197,9 @@ Route::middleware(['auth', 'check.role'])->group(function (){
     Route::get('/member/{id}/detail',                       [MemberController::class, 'show'])->name('member.detail');
     Route::post('/member/update',                           [MemberController::class, 'patch'])->name('member.detail.update');
 
-    //Deposit
-    Route::get('/user-deposit',                             [UserDepositController::class, 'create'])->name('user.deposit');
-    Route::get('/user-deposit/{id}/{status}',               [UserDepositController::class, 'patch'])->name('confirm.deposit');
+    // //Deposit
+    // Route::get('/user-deposit',                             [UserDepositController::class, 'create'])->name('user.deposit');
+    // Route::get('/user-deposit/{id}/{status}',               [UserDepositController::class, 'patch'])->name('confirm.deposit');
 
     //Whatsapp
     Route::get('/whatsapp',                                 [WhatsappController::class, 'create'])->name('whatsapp');

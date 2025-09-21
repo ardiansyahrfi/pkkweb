@@ -1,4 +1,4 @@
-@extends("main-admin")
+{{-- @extends("main-admin")
 
 @section("content")
 @if(session('error'))
@@ -70,4 +70,4 @@
         });
     });
 </script>
-@endsection
+@endsection --}}

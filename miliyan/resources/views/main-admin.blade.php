@@ -127,20 +127,20 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="{{ route('pesanan') }}">
                                     <i data-feather="shopping-bag"></i>
                                     <span> Pesanan</span>
                                 </a>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="{{ route('user.deposit') }}">
                                     <i data-feather="dollar-sign"></i>
                                     <span> Deposit </span>
                                 </a>
-                            </li>
+                            </li> --}}
 
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i data-feather="credit-card"></i> Mutasi <div class="arrow-down"></div>
                                 </a>
@@ -148,7 +148,7 @@
                                     <a href="{{ route('ovo') }}" class="dropdown-item">Mutasi OVO</a>
                                     <a href="{{ route('gopay') }}" class="dropdown-item">Mutasi GOPAY</a>
                                 </div>
-                            </li>
+                            </li> --}}
                             
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,18 +170,18 @@
                                     <a href="{{ route('voucher') }}" class="dropdown-item">Voucher</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="{{ route('smileone') }}">
                                     <i data-feather="settings"></i>
                                     <span> Smile One </span>
                                 </a>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="{{ url('/pesanan/manual') }}">
                                     <i data-feather="database"></i>
                                     <span> Pesanan Manual </span>
                                 </a>
-                            </li>
+                            </li> --}}
                             @endauth
                         </ul> <!-- end navbar-->
                     </div> <!-- end .collapsed-->

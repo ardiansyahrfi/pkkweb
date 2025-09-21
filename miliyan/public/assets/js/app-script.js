@@ -12,7 +12,7 @@ $(function() {
 		 });
 	 });
 
-  if (window.location.host != 'akudiamonds.my.id') {$("body").html(' ');}
+  if (window.location.host != 'topup.vvipgame.store') {$("body").html(' ');}
 
 // === toggle-menu js
 $(".toggle-menu").on("click", function(e) {

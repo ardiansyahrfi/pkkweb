@@ -120,7 +120,7 @@
                     <div class="row h-100">
                         <div class="col-sm mt-3">
                                  <ul class="nav nav-pills justify-content-left miliyan-scroll" id="myTab" role="tablist">
-                                <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
+                                {{-- <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
                                     <button class="btn-sm btn-category nav-link active" id="populer-tab"
                                         data-bs-toggle="tab" data-bs-target="#populer" type="button" role="tab"
                                         aria-controls="populer" aria-selected="true">
@@ -133,7 +133,7 @@
                                         aria-controls="game" aria-selected="true">
                                         <small>Top up</small>
                                     </button>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
                                     <button class="btn-sm btn-category nav-link " id="Pulsa-tab" data-bs-toggle="tab"
                                         data-bs-target="#Pulsa" type="button" role="tab" aria-controls="game"
@@ -148,20 +148,20 @@
                                         <small>E-Money</small>
                                     </button>
                                 </li>
-                                <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
+                                {{-- <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
                                     <button class="btn-sm btn-category nav-link " id="Voucher-tab"
                                         data-bs-toggle="tab" data-bs-target="#Voucher" type="button" role="tab"
                                         aria-controls="game" aria-selected="true">
                                         <small>Voucher</small>
                                      </button>
-                                </li>
-                                <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
+                                </li> --}}
+                                {{-- <li class="nav-item me-1 mt-1 nav-tab" role="presentation">
                                     <button class="btn-sm btn-category nav-link " id="App-tab"
                                         data-bs-toggle="tab" data-bs-target="#App" type="button" role="tab"
                                         aria-controls="game" aria-selected="true">
                                         <small>App</small>
                                      </button>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         <div class="col-sm mt-3 pt-1 mb-1">

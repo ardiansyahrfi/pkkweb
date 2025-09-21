@@ -1011,7 +1011,17 @@ background: #212429;
                 <div class="col-lg-5 p-4">
                     <img src="{{ isset($logofooter->path) && $logofooter->path ? $logofooter->path : '/assets/banner/white_on_trans.png' }}" alt="LOGO" class="logo-bawah">
                       <h5 class="text-uppercase mt-2" style="margin:0">{{ ENV('APP_NAME') }}</h5>
-                       <i class="strip-primary"></i>
+                      
+                      
+    <span style="font-weight:bold; color:#fff;">TIKA CELL</span>
+        
+     <div class="footer-brand">
+     <i class="strip-primary"></i>
+     <div style="height:10px;"></div> <!-- Jarak antara teks dan strip -->
+    <div style="color:#fff; font-size:15px;">
+        Store Top Up Instant Pulsa & Voucher termurah, terpercaya, dan aman legal 100% open 24 Jam dengan payment terlengkap Indonesia.
+    </div>
+</div>
                       <div class="mt-2 ratakirikanan">
                 <p>{{ ENV('APP_DES') }}</p>
             </div>

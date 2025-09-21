@@ -109,8 +109,10 @@
                 <div class="d-flex">
                     <div class="flex-grow-1">
                         <span class="text-muted text-uppercase fs-12 fw-bold">TOTAL SELURUH PESANAN KESELURUHAN</span>
-                        <h3 class="mb-0">Rp. {{ number_format($total_keseluruhan_pembelian, '0', '.', ',') }}</h3>
-                        <small>Dengan total {{ $banyak_keseluruhan_pembelian }}x pemesanan</small>
+                        <h3 class="mb-0">Rp.
+                             {{-- {{ number_format($total_keseluruhan_pembelian, '0', '.', ',') }}</h3> --}}
+                        {{-- <small>Dengan total 
+                            {{ $banyak_keseluruhan_pembelian }}x pemesanan</small> --}}
                     </div>
                     <div class="align-self-center flex-shrink-0">
                         <span class="icon-lg icon-dual-primary" data-feather="shopping-bag"></span>
@@ -141,8 +143,9 @@
                 <div class="d-flex">
                     <div class="flex-grow-1">
                         <span class="text-muted text-uppercase fs-12 fw-bold">TOTAL SELURUH PESANAN PENDING KESELURUHAN</span>
-                        <h3 class="mb-0">Rp. {{ number_format($total_keseluruhan_pembelian_pending, '0', '.', ',') }}</h3>
-                        <small>Dengan total {{ $banyak_keseluruhan_pembelian_pending }}x pemesanan</small>
+                        <h3 class="mb-0">Rp. 
+                            {{-- {{ number_format($total_keseluruhan_pembelian_pending, '0', '.', ',') }}</h3>
+                        <small>Dengan total {{ $banyak_keseluruhan_pembelian_pending }}x pemesanan</small> --}}
                     </div>
                     <div class="align-self-center flex-shrink-0">
                         <span class="icon-lg icon-dual-info" data-feather="shopping-bag"></span>
@@ -157,7 +160,8 @@
                 <div class="d-flex">
                     <div class="flex-grow-1">
                         <span class="text-muted text-uppercase fs-12 fw-bold">TOTAL SELURUH PESANAN BATAL KESELURUHAN</span>
-                        <h3 class="mb-0">Rp. {{ number_format($total_keseluruhan_pembelian_batal, '0', '.', ',') }}</h3>
+                        <h3 class="mb-0">Rp.
+                             {{ number_format($total_keseluruhan_pembelian_batal, '0', '.', ',') }}</h3>
                         <small>Dengan total {{ $banyak_keseluruhan_pembelian_batal }}x pemesanan</small>
                     </div>
                     <div class="align-self-center flex-shrink-0">
@@ -174,8 +178,9 @@
                 <div class="d-flex">
                     <div class="flex-grow-1">
                         <span class="text-muted text-uppercase fs-12 fw-bold">TOTAL SELURUH DEPOSIT KESELURUHAN</span>
-                        <h3 class="mb-0">Rp. {{ number_format($total_keseluruhan_deposit, '0','.',',') }}</h3>
-                        <small>Dengan total {{ $banyak_keseluruhan_deposit }}x pembayaran</small>
+                        <h3 class="mb-0">Rp. 
+                            {{-- {{ number_format($total_keseluruhan_deposit, '0','.',',') }}</h3>
+                        <small>Dengan total {{ $banyak_keseluruhan_deposit }}x pembayaran</small> --}}
                     </div>
                     <div class="align-self-center flex-shrink-0">
                         <span class="icon-lg icon-dual-warning" data-feather="dollar-sign"></span>
