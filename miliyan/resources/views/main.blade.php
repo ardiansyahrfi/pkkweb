@@ -888,17 +888,17 @@ background: #212429;
                                 <i class="fa fa-home"></i>
                                 Home</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('cari') }}" class="nav-link text-white">
                                 <i class="fas fa-search"></i>
                                 History Transaction</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('price') }}" class="nav-link text-white ">
                                 <i class="fa fa-tag"></i>
                                 Daftar Harga</a>
                         </li>
-                       <div class="nav-item dropdown">
+                       {{-- <div class="nav-item dropdown">
                        <a href="#" class="nav-link dropdown-toggle text-white" id="dropdownMenuButton1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-calculator"></i> Calculator ML</a>
                           <ul class="dropdown-menu dropdown-menu-dark shadow mb-2" aria-labelledby="dropdownMenu2">
@@ -912,7 +912,7 @@ background: #212429;
                          <a href="{{ route('hitungpointzodiac') }}" class="dropdown-item text-white"><i class="fas fa-address-card"></i> Zodiac</a>
                        </li>
                     </ul>
-                 </div>                 
+                 </div>                  --}}
                         @auth
                         <li class="nav-item">
                             <a href="{{ route('riwayat') }}" class="nav-link text-white ">
